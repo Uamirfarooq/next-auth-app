@@ -10,8 +10,8 @@ const login = () => {
   const [user, setUser] = React.useState({
     email: "",
     password: "",
-  
   });
+
   const [buttonDisable, setButtonDisable] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const onLogin = async () => {
@@ -21,6 +21,19 @@ const login = () => {
       console.log(responce);
       toast.success("login Success");
       router.push("/profile");
+    } catch (error: any) {
+      console.log("login failed", error.message);
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+  const forget = async () => {
+    try {
+      setLoading(true);
+      
+  
+      router.push("/forget");
     } catch (error: any) {
       console.log("login failed", error.message);
       toast.error(error.message);
@@ -38,6 +51,7 @@ const login = () => {
       setButtonDisable(true);
     }
   }, [user]);
+
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
@@ -79,12 +93,14 @@ const login = () => {
           onClick={onLogin}
           className="p-2 border  bg-blue-500 hover:bg-blue-600 border-gray-300 rounded-lg my-4 focus:outline-none focus:border-gray-600"
         >
-          {" "}
+          {/* {" "} */}
           {buttonDisable ? "Full-fill" : "Login"}
-        </button>
+          </button>
         <Link className="hover:text-blue-600" href="/signup">
-          Haven't Account! Signup{" "}
+          Haven't Account! Signup
+          {/* {" "} */}
         </Link>
+        <button onClick={forget} className="p-2 rounded bg-orange-600">forget</button>
       </div>
     </div>
   );
