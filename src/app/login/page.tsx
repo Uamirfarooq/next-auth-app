@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-const login = () => {
+const Login = () => {
   const router = useRouter();
   const [user, setUser] = React.useState({
     email: "",
@@ -28,7 +28,7 @@ const login = () => {
       setLoading(false);
     }
   };
-  const forget = async () => {
+  const Forget = async () => {
     try {
       setLoading(true);
       
@@ -100,10 +100,10 @@ const login = () => {
           Haven't Account! Signup
           {/* {" "} */}
         </Link>
-        <button onClick={forget} className="p-2 rounded bg-orange-600">forget</button>
+        <button onClick={Forget} className="p-2 rounded bg-orange-600">forget</button>
       </div>
     </div>
   );
 };
 
-export default login;
+export default Login;
