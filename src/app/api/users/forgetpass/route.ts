@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
         try {
             if (user1) {
                 // Update the user's password
-                const taskdone = await User.updateOne(
+                const taskdone = await User.findByIdAndUpdate(
                      user1._id , // Use the appropriate identifier for your user
                     { $set: { password: hashedPassword, forgotPasswordToken: null } } // Update the password and clear the token
                 );
