@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
 const page = () => {
-  const router = useRouter();
-    const [user,setUser] = useState({
+  const Router = useRouter();
+    const [user,setUser] = React.useState({
         email: ""
       });
 
@@ -14,7 +14,7 @@ const page = () => {
         try {
           console.log("making axios request");
            await axios.post("/api/users/forget", user);
-          router.push("/check")
+          Router.push("/check")
         } catch (error: any) {
           console.log("Forget Failed0000000", error.message);
           

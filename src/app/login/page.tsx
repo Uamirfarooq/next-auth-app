@@ -6,7 +6,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const login = () => {
-  const router = useRouter();
+  const Router = useRouter();
   const [user, setUser] = React.useState({
     email: "",
     password: "",
@@ -20,7 +20,7 @@ const login = () => {
       const responce = await axios.post("api/users/login", user);
       console.log(responce);
       toast.success("login Success");
-      router.push("/profile");
+      Router.push("/profile");
     } catch (error: any) {
       console.log("login failed", error.message);
       toast.error(error.message);
