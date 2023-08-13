@@ -2,9 +2,10 @@
 
 import axios from 'axios'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import  { useEffect, useState } from 'react'
 
-const page  = ({params}:any) => {
+const Page  = () => {
   const [username , setUsername] = useState()
   const [email , setEmail] = useState()
   const [id , setId] = useState()
@@ -32,7 +33,7 @@ const page  = ({params}:any) => {
   )
 }
 
-export default  page
+export default  Page
 
 
 

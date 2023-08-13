@@ -1,8 +1,10 @@
 "use client"
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import React from 'react'
+import  {useEffect, useState} from 'react'
 
-import React, { useState } from 'react'
+
 
 const Page = () => {
   const router = useRouter();

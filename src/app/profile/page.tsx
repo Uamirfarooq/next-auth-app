@@ -3,9 +3,10 @@ import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { NextResponse } from 'next/server'
-import React, {useEffect, useState} from 'react'
+import  {useEffect, useState} from 'react'
+import React from 'react'
 
-const page  = () => {
+const Page  = () => {
   const router = useRouter();
   const [data, setdata] = useState ("Nothing")
   const [verify, setVerify] = useState ("")
@@ -40,4 +41,4 @@ const page  = () => {
     </div>
   )
 }
-export default  page
+export default  Page

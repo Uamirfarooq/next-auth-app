@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -97,7 +98,7 @@ const Login = () => {
           {buttonDisable ? "Full-fill" : "Login"}
           </button>
         <Link className="hover:text-blue-600" href="/signup">
-          Haven't Account! Signup
+          Havent Account! Signup
           {/* {" "} */}
         </Link>
         <button onClick={Forget} className="p-2 rounded bg-orange-600">forget</button>

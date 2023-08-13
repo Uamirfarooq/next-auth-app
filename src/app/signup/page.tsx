@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import  {useEffect, useState} from 'react'
+
+import React from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-const signup = () => {
+const Signup = () => {
   const router = useRouter();
   const [user, setUser] = React.useState({
     email: "",
@@ -99,4 +101,4 @@ const signup = () => {
   );
 };
 
-export default signup;
+export default Signup;
